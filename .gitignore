@@ -1,4 +1,11 @@
-dist
+# dist
+
+dist/*.eot
+dist/*.svg
+dist/*.ttf
+dist/*.woff
+dist/*.woff2
+dist/*.complete.*
 
 # Logs
 logs
