@@ -212,8 +212,16 @@ class Shariff {
         $shareLink.append($shareText)
       }
 
-      if (typeof service.faPrefix !== 'undefined' && typeof service.faName !== 'undefined') {
-        $shareLink.prepend($('<span/>').addClass(`${service.faPrefix} ${service.faName}`))
+      if (
+	   typeof service.faPrefix !== 'undefined'
+	   && typeof service.faName !== 'undefined'
+	   && typeof service.svg !== 'undefined'
+	 ){
+	   var $svgGhsvs = $('<span/>')
+          .addClass(`${service.faPrefix} ${service.faName}`)
+          .html(service.svg);
+          
+        $shareLink.prepend($svgGhsvs);
       }
 
       if (service.popup) {
