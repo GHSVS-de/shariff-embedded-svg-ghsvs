@@ -1,21 +1,33 @@
 {
-  "name": "shariff",
-  "version": "3.2.1",
-  "description": "Shariff enables website users to share their favorite content without compromising their privacy.",
+  "originalName": "shariff",
+  "name": "shariff-embedded-svg-ghsvs",
+  "version": "2020.08.03",
+  "originalVersion": "3.2.1",
+  "minimumPhp": "7.2.0",
+  "maximumPhp": "",
+  "minimumJoomla": "3.9.8",
+  "maximumJoomla": "3.10.99999",
+  "allowDowngrades": "1",
+  "originalDescription": "Shariff enables website users to share their favorite content without compromising their privacy.",
   "main": "src/js/shariff.js",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline --port 3000 --content-base demo --entry app=./demo/app.js",
     "test": "eslint src && karma start --single-run",
-    "build": "rm -fr dist && webpack -p",
-    "build_zip": "7z a -tzip $BASE_NAME.zip ./dist/* && 7z a -ttar $BASE_NAME.tar ./dist/* && 7z a $BASE_NAME.tar.gz $BASE_NAME.tar"
+    "build": "rm -fr dist && webpack -p && node ./build.js"
   },
-  "repository": {
+  "originalRepository": {
     "type": "git",
     "url": "https://github.com/heiseonline/shariff"
   },
-  "author": {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GHSVS-de/shariff-embedded-svg-ghsvs"
+  },
+  "originalAuthor": {
     "name": "Ines Pauer",
     "email": "ipa@heise.de"
+  },
+  "author": {
+    "name": "Volkmar Volli Schlothauer"
   },
   "contributors": [
     {
@@ -33,17 +45,20 @@
     {
       "name": "Deniz Sesli",
       "email": "dzs@heise.de"
+    },
+    {
+      "name": "Volkmat Volli Schlothauer (only changes of clone 'shariff-embedded-svg-ghsvs')"
     }
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
     "jquery": "^3.4.1"
   },
-  "publishConfig": {
-    "registry": "http://registry.npmjs.org"
-  },
-  "homepage": "https://github.com/heiseonline/shariff",
+  "publishConfig": {},
+  "originalHomepage": "https://github.com/heiseonline/shariff",
+  "homepage": "https://github.com/GHSVS-de/shariff-embedded-svg-ghsvs",
   "devDependencies": {
+    "adm-zip": "^0.4.16",
     "autoprefixer": "^8.6.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

@@ -1,10 +1,14 @@
 const {
+	originalAuthor,
   author,
   contributors,
+	originalHomepage,
   homepage,
   license,
+	originalName,
   name,
   title,
+	originalVersion,
   version,
 } = require('./package.json')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -58,10 +62,16 @@ const baseConf = {
   plugins: [
     extractLess,
     new webpack.BannerPlugin({
-      banner: `${title || name} - v${version} - ${(new Date()).toGMTString()}
+      banner: `${title || originalName} - v${originalVersion} - ${(new Date()).toGMTString()}
+${originalHomepage}
+Copyright (c) ${(new Date()).getFullYear()} ${originalAuthor.name}, ${contributors.map(c => c.name).join(', ')}
+Licensed under the ${license} license
+
+Edited clone ${name} - v${version}
 ${homepage}
-Copyright (c) ${(new Date()).getFullYear()} ${author.name}, ${contributors.map(c => c.name).join(', ')}
-Licensed under the ${license} license`
+The original code has been changed/edited by 
+${author.name}
+`
     })
   ],
 }
