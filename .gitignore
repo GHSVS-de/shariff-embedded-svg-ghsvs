@@ -65,3 +65,4 @@ typings/
 # macOS stuff
 .DS_Store
 
+!dist/*.zip
