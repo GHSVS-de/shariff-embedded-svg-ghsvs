@@ -219,6 +219,7 @@ class Shariff {
 	 ){
 	   var $svgGhsvs = $('<span/>')
           .addClass(`${service.faPrefix} ${service.faName}`)
+					.attr('aria-hidden', 'true')
           .html(service.svg);
           
         $shareLink.prepend($svgGhsvs);

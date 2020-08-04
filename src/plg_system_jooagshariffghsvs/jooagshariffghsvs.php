@@ -115,7 +115,7 @@ class plgSystemJooagshariffghsvs extends JPlugin
 
 			foreach ($configs as $item)
 			{
-				list($key, $value) = explode("=", $item);
+				@list($key, $value) = explode("=", $item);
 				$config[$key] = $value;
 			}
 
