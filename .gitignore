@@ -65,4 +65,8 @@ typings/
 # macOS stuff
 .DS_Store
 
+
+# Disable language statistics of project
+* linguist-vendored
+
 !dist/*.zip

@@ -1,6 +1,7 @@
 {
   "originalName": "shariff",
   "name": "shariff-embedded-svg-ghsvs",
+	"description": "A clone of heiseonline/shariff combined with a clone of joomla-agency/plg_jooag_shariff to get rid of fontawesome.",
   "version": "2020.08.03",
   "originalVersion": "3.2.1",
   "minimumPhp": "7.2.0",
