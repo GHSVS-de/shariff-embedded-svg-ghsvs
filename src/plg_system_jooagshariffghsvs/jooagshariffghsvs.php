@@ -223,13 +223,13 @@ class plgSystemJooagshariffghsvs extends JPlugin
 
 		if ($this->params->get('shariffcss') != '-1')
 		{
-			$doc->addStyleSheet(JURI::root() . 'media/plg_system_jooagshariffghsvs/assets/' . $this->params->get('shariffcss'));
+			$doc->addStyleSheet(JURI::root() . 'media/plg_system_jooagshariffghsvs/assets/' . $this->params->get('shariffcss'), ['version' => 'auto']);
 		}
 
 		if ($this->params->get('shariffjs') != '-1')
 		{	
 			JHtml::_('jquery.framework');
-			$doc->addScript(JURI::root() . 'media/plg_system_jooagshariffghsvs/assets/' . $this->params->get('shariffjs'));
+			$doc->addScript(JURI::root() . 'media/plg_system_jooagshariffghsvs/assets/' . $this->params->get('shariffjs'), ['version' => 'auto']);
 			$doc->addScriptDeclaration('jQuery(document).ready(function() {var buttonsContainer = jQuery(".shariff");new Shariff(buttonsContainer);});');
 		}
 
@@ -284,8 +284,10 @@ class plgSystemJooagshariffghsvs extends JPlugin
 	 */
 	public function onExtensionBeforeSave($context, $table, $isNew)
 	{
-		if ($table->name == 'PLG_JOOAG_SHARIFF')
-		{
+		if (
+			!empty($table->name)
+			&& strtolower($table->name) === 'plg_system_jooagshariffghsvs'
+		){
 			$params = json_decode($table->params);
 
 			$json = new stdClass;
@@ -346,7 +348,7 @@ class plgSystemJooagshariffghsvs extends JPlugin
 			}
 
 			$json = json_encode($json, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT);
-			JFile::write(JPATH_PLUGINS . '/system/jooag_shariff/backend/shariff.json', $json);
+			JFile::write(JPATH_PLUGINS . '/system/plg_system_jooagshariffghsvs/backend/shariff.json', $json);
 		}
 	}
 }
